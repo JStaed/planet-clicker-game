@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8ae071qdtqmx"]
+[gd_scene load_steps=9 format=3 uid="uid://b8ae071qdtqmx"]
 
 [ext_resource type="Theme" uid="uid://drkq000it3bqx" path="res://resources/ShopButtonTheme.tres" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://br5np7tdsuy4h" path="res://prefabs/h_spacer.tscn" id="1_jyhfs"]
@@ -15,6 +15,9 @@ fill_to = Vector2(0, 1)
 
 [sub_resource type="Theme" id="Theme_jyhfs"]
 default_font_size = 128
+
+[sub_resource type="Theme" id="Theme_tbgi4"]
+default_font_size = 96
 
 [node name="Node2D" type="Node2D"]
 
@@ -49,6 +52,16 @@ size_flags_horizontal = 3
 
 [node name="VSpacer" parent="CanvasLayer/Control/HBoxContainer/ShopLeft" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/ShopLeft"]
+layout_mode = 2
+theme = ExtResource("1_0wfyh")
+text = "Shop 1"
+horizontal_alignment = 1
+
+[node name="VSpacer5" parent="CanvasLayer/Control/HBoxContainer/ShopLeft" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopLeft"]
 layout_mode = 2
@@ -94,6 +107,29 @@ vertical_alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("1_o5qli")
 
+[node name="PlanetNavButtons" type="HBoxContainer" parent="CanvasLayer/Control/HBoxContainer/Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="HSpacer2" parent="CanvasLayer/Control/HBoxContainer/Center/PlanetNavButtons" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Center/PlanetNavButtons"]
+layout_mode = 2
+theme = SubResource("Theme_tbgi4")
+text = "<<"
+
+[node name="HSpacer" parent="CanvasLayer/Control/HBoxContainer/Center/PlanetNavButtons" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Center/PlanetNavButtons"]
+layout_mode = 2
+theme = SubResource("Theme_tbgi4")
+text = ">>"
+
+[node name="HSpacer3" parent="CanvasLayer/Control/HBoxContainer/Center/PlanetNavButtons" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+
 [node name="HSpacer3" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
 size_flags_stretch_ratio = 0.5
@@ -104,6 +140,16 @@ size_flags_horizontal = 3
 
 [node name="VSpacer" parent="CanvasLayer/Control/HBoxContainer/ShopRight" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/ShopRight"]
+layout_mode = 2
+theme = ExtResource("1_0wfyh")
+text = "Shop 2"
+horizontal_alignment = 1
+
+[node name="VSpacer5" parent="CanvasLayer/Control/HBoxContainer/ShopRight" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopRight"]
 layout_mode = 2
