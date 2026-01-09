@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8ae071qdtqmx"]
+[gd_scene load_steps=8 format=3 uid="uid://b8ae071qdtqmx"]
 
 [ext_resource type="Theme" uid="uid://drkq000it3bqx" path="res://resources/ShopButtonTheme.tres" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://br5np7tdsuy4h" path="res://prefabs/h_spacer.tscn" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://c8l05r1uqvjag" path="res://planet-sprites/planet00.png" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c5iuh3wu5kg54" path="res://prefabs/v_spacer.tscn" id="2_tbgi4"]
 
 [sub_resource type="Gradient" id="Gradient_0wfyh"]
 offsets = PackedFloat32Array(0, 0.62, 1)
@@ -37,14 +39,46 @@ offset_right = 3842.0
 offset_bottom = 2034.0
 alignment = 1
 
+[node name="HSpacer" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
 [node name="ShopLeft" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="VSpacer" parent="CanvasLayer/Control/HBoxContainer/ShopLeft" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopLeft"]
 layout_mode = 2
 theme = ExtResource("1_0wfyh")
 text = "Upgrade 1"
+
+[node name="VSpacer2" parent="CanvasLayer/Control/HBoxContainer/ShopLeft" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopLeft"]
+layout_mode = 2
+theme = ExtResource("1_0wfyh")
+text = "Upgrade 2"
+
+[node name="VSpacer3" parent="CanvasLayer/Control/HBoxContainer/ShopLeft" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopLeft"]
+layout_mode = 2
+theme = ExtResource("1_0wfyh")
+text = "Upgrade 3"
+
+[node name="VSpacer4" parent="CanvasLayer/Control/HBoxContainer/ShopLeft" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+
+[node name="HSpacer2" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
 
 [node name="Center" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
@@ -60,11 +94,43 @@ vertical_alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("1_o5qli")
 
+[node name="HSpacer3" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
 [node name="ShopRight" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="VSpacer" parent="CanvasLayer/Control/HBoxContainer/ShopRight" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopRight"]
 layout_mode = 2
 theme = ExtResource("1_0wfyh")
 text = "Upgrade 1"
+
+[node name="VSpacer2" parent="CanvasLayer/Control/HBoxContainer/ShopRight" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopRight"]
+layout_mode = 2
+theme = ExtResource("1_0wfyh")
+text = "Upgrade 2"
+
+[node name="VSpacer3" parent="CanvasLayer/Control/HBoxContainer/ShopRight" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/ShopRight"]
+layout_mode = 2
+theme = ExtResource("1_0wfyh")
+text = "Upgrade 3"
+
+[node name="VSpacer4" parent="CanvasLayer/Control/HBoxContainer/ShopRight" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+
+[node name="HSpacer4" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
