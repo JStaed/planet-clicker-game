@@ -7,7 +7,28 @@ var score_increment: int = 1
 var selected_sprite: int = 0
 
 var unlocked_sprites = [
-	true, false, false, false, false, false, false, false, false, false
+	true,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false,
+	false
+]
+var sprite_prices = [
+	0,
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9
 ]
 
 @onready var planet_sprites = [
@@ -23,20 +44,20 @@ var unlocked_sprites = [
 	preload("res://planet-sprites/planet09.png")
 ]
 
-func _on_click_planet(): # Increments score by increment value when the planet is clicked
+func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
 		score += score_increment
 		$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
 	else:
 		pass
 
-func _cycle_planet_sprite_forward():
+func _cycle_planet_sprite_forward() -> void:
 	selected_sprite = increment_clamped(selected_sprite, 0, 9)
-	print(unlocked_sprites[selected_sprite])
+	update_planet_sprite()
 
-func _cycle_planet_sprite_backward():
+func _cycle_planet_sprite_backward() -> void:
 	selected_sprite = increment_clamped(selected_sprite, 0, 9, -1)
-	print(unlocked_sprites[selected_sprite])
+	update_planet_sprite()	
 
 func increment_clamped(base: int, value_min: int, value_max: int, increment: int = 1) -> int:
 	base += increment
@@ -46,5 +67,9 @@ func increment_clamped(base: int, value_min: int, value_max: int, increment: int
 		base = value_max
 	return base
 
-func update_planet_sprite(spriteID: int):
-	pass
+func update_planet_sprite() -> void:
+	if unlocked_sprites[selected_sprite]:
+		$CanvasContainer/Middle/PlanetButton.texture_normal = planet_sprites[selected_sprite]
+	else:
+		pass
+	print(unlocked_sprites[selected_sprite])
