@@ -1,6 +1,6 @@
 extends Control
 
-const PRICE_MULTIPLER = 2
+const PRICE_RATIO = 0.2
 
 var score: int = 0
 var score_increment: int = 1
@@ -79,11 +79,13 @@ func purchase_upgrade(upgradeID: int, shopID: int):
 	if shopID == 0: # Shop 1
 		if score >= shop_1_prices[upgradeID]:
 			score -= shop_1_prices[upgradeID]
+			shop_1_prices[upgradeID] = int(floor(shop_1_prices[upgradeID] + (shop_1_prices[upgradeID] * PRICE_RATIO)))
 			upgrade_levels[upgradeID] += 1
 			register_upgrade(upgradeID, shopID)
 	elif shopID == 1: # Shop 2
 		if score >= shop_2_prices[upgradeID]:
 			score -= shop_2_prices[upgradeID]
+			shop_2_prices[upgradeID] = int(floor(shop_2_prices[upgradeID] + (shop_2_prices[upgradeID] * PRICE_RATIO)))
 			upgrade_levels[upgradeID] += 1
 			register_upgrade(upgradeID, shopID)
 
@@ -92,6 +94,7 @@ func register_upgrade(upgradeID: int, shopID: int):
 		score_per_second += shop_1_upgrade[upgradeID]
 	elif shopID == 1:
 		score_increment += shop_2_upgrade[upgradeID]
+	$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
 
 func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
@@ -110,6 +113,7 @@ func _purchase_planet_sprite():
 	if score >= sprite_prices[selected_sprite]:
 		score -= sprite_prices[selected_sprite]
 		unlocked_sprites[selected_sprite] = true
+		$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
 		update_planet_sprite()
 
 func increment_clamped(base: int, value_min: int, value_max: int, increment: int = 1) -> int:
