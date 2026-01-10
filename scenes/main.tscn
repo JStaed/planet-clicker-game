@@ -221,7 +221,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Research Lab: lvl 0 | Cost 0"
+text = "Colony: lvl 0 | Cost 0"
 
 [node name="VSpacer3" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
@@ -230,7 +230,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton2" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Colony: lvl 0 | Cost 0"
+text = "Research Lab: lvl 0 | Cost 0"
 
 [node name="VSpacer4" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
