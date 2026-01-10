@@ -261,4 +261,3 @@ autostart = true
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Right/ShopButton" to="CanvasLayer/Control" method="_on_click_shop_1_2"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Right/ShopButton2" to="CanvasLayer/Control" method="_on_click_shop_2_2"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Right/ShopButton3" to="CanvasLayer/Control" method="_on_click_shop_3_2"]
-[connection signal="timeout" from="ScorePerSecond" to="CanvasLayer/Control" method="_on_score_per_second_timeout"]
