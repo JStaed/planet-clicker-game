@@ -1,6 +1,8 @@
 extends Control
 
 
+var PRICE_RATIO: float = 0.2
+
 var score: int = 0
 var score_increment: int = 1
 var score_per_second: int = 0
@@ -97,7 +99,23 @@ func _purchase_planet_sprite():
 		update_planet_sprite()
 
 func purchase_upgrade(shopID: int, upgradeID: int):
-	pass
+	match shopID:
+		0:
+			if score >= shop_1_prices[upgradeID]:
+				score -= shop_1_prices[upgradeID]
+				shop_1_levels[upgradeID] += 1
+				shop_1_prices[upgradeID] = floor(shop_1_prices[upgradeID] * (1+PRICE_RATIO))
+				score_per_second += shop_1_upgrades[upgradeID]
+				update_score()
+				update_shops()
+		1:
+			if score >= shop_2_prices[upgradeID]:
+				score -= shop_2_prices[upgradeID]
+				shop_2_levels[upgradeID] += 1
+				shop_2_prices[upgradeID] = floor(shop_2_prices[upgradeID] * (1+PRICE_RATIO))
+				score_increment += shop_2_upgrades[upgradeID]
+				update_score()
+				update_shops()
 
 func update_score():
 	$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
