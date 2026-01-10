@@ -81,12 +81,26 @@ func purchase_upgrade(upgradeID: int, shopID: int):
 			score -= shop_1_prices[upgradeID]
 			shop_1_prices[upgradeID] = int(floor(shop_1_prices[upgradeID] + (shop_1_prices[upgradeID] * PRICE_RATIO)))
 			upgrade_levels[upgradeID] += 1
+			match upgradeID:
+				0:
+					$CanvasContainer/Left/ShopButton.text = "Satellite: lvl " + upgrade_levels[0] + " | Cost: " + shop_1_prices[upgradeID]
+				1:
+					$CanvasContainer/Left/ShopButton2.text = "Rover: lvl " + upgrade_levels[1] + " | Cost: " + shop_1_prices[upgradeID]
+				2:
+					$CanvasContainer/Left/ShopButton3.text = "Rocket: lvl " + upgrade_levels[2] + " | Cost: " + shop_1_prices[upgradeID]
 			register_upgrade(upgradeID, shopID)
 	elif shopID == 1: # Shop 2
 		if score >= shop_2_prices[upgradeID]:
 			score -= shop_2_prices[upgradeID]
 			shop_2_prices[upgradeID] = int(floor(shop_2_prices[upgradeID] + (shop_2_prices[upgradeID] * PRICE_RATIO)))
 			upgrade_levels[upgradeID] += 1
+			match upgradeID:
+				0:
+					$CanvasContainer/Right/ShopButton.text = "Research Lab: lvl " + upgrade_levels[3] + " | Cost: " + shop_2_prices[upgradeID]
+				1:
+					$CanvasContainer/Right/ShopButton2.text = "Colony: lvl " + upgrade_levels[4] + " | Cost: " + shop_2_prices[upgradeID]
+				2:
+					$CanvasContainer/Right/ShopButton3.text = "City: lvl " + upgrade_levels[5] + " | Cost: " + shop_2_prices[upgradeID]
 			register_upgrade(upgradeID, shopID)
 
 func register_upgrade(upgradeID: int, shopID: int):
