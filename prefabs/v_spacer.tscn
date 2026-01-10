@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c5iuh3wu5kg54"]
+
+[node name="VSpacer" type="Panel"]
+modulate = Color(1, 1, 1, 0)
+size_flags_vertical = 3

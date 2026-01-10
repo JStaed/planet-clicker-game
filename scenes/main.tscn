@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8ae071qdtqmx"]
+[gd_scene load_steps=9 format=3 uid="uid://b8ae071qdtqmx"]
 
 [ext_resource type="PackedScene" uid="uid://br5np7tdsuy4h" path="res://prefabs/h_spacer.tscn" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://c8l05r1uqvjag" path="res://planet-sprites/planet00.png" id="1_o5qli"]
 [ext_resource type="Theme" uid="uid://2wq2d3flugqf" path="res://resources/subheading_theme.tres" id="1_sugp2"]
 [ext_resource type="Theme" uid="uid://c8iwwysl5q678" path="res://resources/heading_theme.tres" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c5iuh3wu5kg54" path="res://prefabs/v_spacer.tscn" id="2_tbgi4"]
 [ext_resource type="Theme" uid="uid://psb83w2ue8vo" path="res://scenes/button_text_theme.tres" id="5_tbgi4"]
 
 [sub_resource type="Gradient" id="Gradient_f2qo4"]
@@ -30,69 +31,151 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="CanvasContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 3840.0
 offset_bottom = 2160.0
 alignment = 1
 
-[node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="HSpacer" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
+[node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/CanvasContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="ShopTitle" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left"]
+[node name="VSpacer" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+
+[node name="ShopTitle" type="Label" parent="CanvasLayer/Control/CanvasContainer/Left"]
 layout_mode = 2
 theme = ExtResource("1_sugp2")
 text = "Shop 1"
 horizontal_alignment = 1
 
-[node name="Middle" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="VSpacer2" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="ShopButton" type="Button" parent="CanvasLayer/Control/CanvasContainer/Left"]
+layout_mode = 2
+theme = ExtResource("5_tbgi4")
+text = "Upgrade 1"
+
+[node name="VSpacer3" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="ShopButton2" type="Button" parent="CanvasLayer/Control/CanvasContainer/Left"]
+layout_mode = 2
+theme = ExtResource("5_tbgi4")
+text = "Upgrade 2"
+
+[node name="VSpacer4" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="ShopButton3" type="Button" parent="CanvasLayer/Control/CanvasContainer/Left"]
+layout_mode = 2
+theme = ExtResource("5_tbgi4")
+text = "Upgrade 3"
+
+[node name="VSpacer5" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+
+[node name="HSpacer4" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
+[node name="Middle" type="VBoxContainer" parent="CanvasLayer/Control/CanvasContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Middle"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/CanvasContainer/Middle"]
 layout_mode = 2
 theme = ExtResource("2_jyhfs")
 text = "Score: 0"
 horizontal_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Middle"]
+[node name="PlanetButton" type="TextureButton" parent="CanvasLayer/Control/CanvasContainer/Middle"]
 layout_mode = 2
 texture_normal = ExtResource("1_o5qli")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/HBoxContainer/Middle"]
+[node name="PlanetChangeButtons" type="HBoxContainer" parent="CanvasLayer/Control/CanvasContainer/Middle"]
 layout_mode = 2
 alignment = 1
 
-[node name="HSpacer2" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" instance=ExtResource("1_jyhfs")]
+[node name="HSpacer2" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetChangeButtons" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer"]
+[node name="Button" type="Button" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetChangeButtons"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
 text = "<<"
 
-[node name="HSpacer" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" instance=ExtResource("1_jyhfs")]
+[node name="HSpacer" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetChangeButtons" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
 size_flags_stretch_ratio = 0.5
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer"]
+[node name="Button2" type="Button" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetChangeButtons"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
 text = ">>"
 
-[node name="HSpacer3" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" instance=ExtResource("1_jyhfs")]
+[node name="HSpacer3" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetChangeButtons" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
 
-[node name="Right" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="HSpacer3" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
+[node name="Right" type="VBoxContainer" parent="CanvasLayer/Control/CanvasContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="ShopTitle" type="Label" parent="CanvasLayer/Control/HBoxContainer/Right"]
+[node name="VSpacer" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+
+[node name="ShopTitle" type="Label" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("1_sugp2")
 text = "Shop 1"
 horizontal_alignment = 1
+
+[node name="VSpacer2" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="ShopButton" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
+layout_mode = 2
+theme = ExtResource("5_tbgi4")
+text = "Upgrade 1"
+
+[node name="VSpacer3" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="ShopButton2" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
+layout_mode = 2
+theme = ExtResource("5_tbgi4")
+text = "Upgrade 2"
+
+[node name="VSpacer4" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="ShopButton3" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
+layout_mode = 2
+theme = ExtResource("5_tbgi4")
+text = "Upgrade 3"
+
+[node name="VSpacer5" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
+layout_mode = 2
+
+[node name="HSpacer2" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
