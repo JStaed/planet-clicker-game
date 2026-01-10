@@ -74,7 +74,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton" type="Button" parent="CanvasLayer/Control/CanvasContainer/Left"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Upgrade 1"
+text = "Satellite: 0"
 
 [node name="VSpacer3" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
@@ -83,7 +83,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton2" type="Button" parent="CanvasLayer/Control/CanvasContainer/Left"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Upgrade 2"
+text = "Rover: 0"
 
 [node name="VSpacer4" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
@@ -92,7 +92,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton3" type="Button" parent="CanvasLayer/Control/CanvasContainer/Left"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Upgrade 3"
+text = "Rocket: 0"
 
 [node name="VSpacer5" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
@@ -211,7 +211,7 @@ layout_mode = 2
 [node name="ShopTitle" type="Label" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("1_sugp2")
-text = "Shop 1"
+text = "Shop 2"
 horizontal_alignment = 1
 
 [node name="VSpacer2" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
@@ -221,7 +221,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Upgrade 1"
+text = "Research Lab: 0"
 
 [node name="VSpacer3" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
@@ -230,7 +230,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton2" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Upgrade 2"
+text = "Colony: 0"
 
 [node name="VSpacer4" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
 layout_mode = 2
@@ -239,7 +239,7 @@ size_flags_stretch_ratio = 0.1
 [node name="ShopButton3" type="Button" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("5_tbgi4")
-text = "Upgrade 3"
+text = "City: 0"
 
 [node name="VSpacer5" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
 layout_mode = 2

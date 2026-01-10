@@ -5,7 +5,6 @@ var score: int = 0
 var score_increment: int = 1
 
 var selected_sprite: int = 0
-
 var unlocked_sprites = [
 	true,
 	false,
@@ -30,7 +29,6 @@ var sprite_prices = [
 	1000000000,
 	9999999999
 ]
-
 @onready var planet_sprites = [
 	preload("res://planet-sprites/planet00.png"),
 	preload("res://planet-sprites/planet01.png"),
@@ -43,6 +41,20 @@ var sprite_prices = [
 	preload("res://planet-sprites/planet08.png"),
 	preload("res://planet-sprites/planet09.png")
 ]
+
+var shop_1_prices = [
+	0,
+	0,
+	0
+]
+var shop_2_prices = [
+	0,
+	0,
+	0
+]
+
+func _purchase_upgrade(upgradeID: int):
+	pass
 
 func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
