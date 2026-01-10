@@ -55,13 +55,13 @@ var upgrade_levels = [
 
 var shop_1_prices = [
 	11,
-	12,
-	13
+	500,
+	10000
 ]
 var shop_2_prices = [
-	21,
-	22,
-	23
+	1000,
+	50000,
+	1000000
 ]
 
 var shop_1_upgrade = [
@@ -163,3 +163,4 @@ func _on_click_shop_3_2() -> void:
 
 func _on_score_per_second_timeout() -> void:
 	score += score_per_second * (selected_sprite+1)
+	$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)

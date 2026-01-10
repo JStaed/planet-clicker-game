@@ -51,7 +51,7 @@ alignment = 1
 
 [node name="HSpacer" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.25
 
 [node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/CanvasContainer"]
 layout_mode = 2
@@ -99,7 +99,7 @@ layout_mode = 2
 
 [node name="HSpacer4" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.25
 
 [node name="Middle" type="VBoxContainer" parent="CanvasLayer/Control/CanvasContainer"]
 layout_mode = 2
@@ -198,7 +198,7 @@ layout_mode = 2
 
 [node name="HSpacer3" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.25
 
 [node name="Right" type="VBoxContainer" parent="CanvasLayer/Control/CanvasContainer"]
 layout_mode = 2
@@ -246,7 +246,7 @@ layout_mode = 2
 
 [node name="HSpacer2" parent="CanvasLayer/Control/CanvasContainer" instance=ExtResource("1_jyhfs")]
 layout_mode = 2
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.25
 
 [node name="ScorePerSecond" type="Timer" parent="."]
 autostart = true
