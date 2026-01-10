@@ -3,8 +3,41 @@ extends Control
 
 var score: int = 0
 var score_increment: int = 1
+var score_per_second: int = 0
 
 var selected_sprite: int = 0
+
+var shop_1_upgrades = [
+	1,
+	5,
+	10
+]
+var shop_1_prices = [
+	50,
+	500,
+	100000
+]
+var shop_1_levels = [
+	0,
+	0,
+	0
+]
+
+var shop_2_upgrades = [
+	0,
+	0,
+	0
+]
+var shop_2_prices = [
+	2500,
+	50000,
+	200000
+]
+var shop_2_levels = [
+	0,
+	0,
+	0
+]
 
 var unlocked_sprites = [
 	true,
@@ -30,7 +63,6 @@ var sprite_prices = [
 	1000000000,
 	9999999999
 ]
-
 @onready var planet_sprites = [
 	preload("res://planet-sprites/planet00.png"),
 	preload("res://planet-sprites/planet01.png"),
@@ -47,9 +79,7 @@ var sprite_prices = [
 func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
 		score += score_increment * (1 + selected_sprite)
-		$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
-	else:
-		pass
+		update_score()
 
 func _cycle_planet_sprite_forward() -> void:
 	selected_sprite = increment_clamped(selected_sprite, 0, 9)
@@ -63,7 +93,11 @@ func _purchase_planet_sprite():
 	if score >= sprite_prices[selected_sprite]:
 		score -= sprite_prices[selected_sprite]
 		unlocked_sprites[selected_sprite] = true
+		update_score()
 		update_planet_sprite()
+
+func update_score():
+	$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
 
 func increment_clamped(base: int, value_min: int, value_max: int, increment: int = 1) -> int:
 	base += increment
