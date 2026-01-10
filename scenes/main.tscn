@@ -64,7 +64,7 @@ layout_mode = 2
 [node name="ShopTitle" type="Label" parent="CanvasLayer/Control/CanvasContainer/Left"]
 layout_mode = 2
 theme = ExtResource("1_sugp2")
-text = "Shop 1"
+text = "Idle Upgrades"
 horizontal_alignment = 1
 
 [node name="VSpacer2" parent="CanvasLayer/Control/CanvasContainer/Left" instance=ExtResource("2_tbgi4")]
@@ -217,7 +217,7 @@ layout_mode = 2
 [node name="ShopTitle" type="Label" parent="CanvasLayer/Control/CanvasContainer/Right"]
 layout_mode = 2
 theme = ExtResource("1_sugp2")
-text = "Shop 1"
+text = "Click Upgrades"
 horizontal_alignment = 1
 
 [node name="VSpacer2" parent="CanvasLayer/Control/CanvasContainer/Right" instance=ExtResource("2_tbgi4")]
@@ -255,6 +255,7 @@ layout_mode = 2
 size_flags_stretch_ratio = 0.1
 
 [node name="ScorePerSecond" type="Timer" parent="."]
+autostart = true
 
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton" to="CanvasLayer/Control" method="_on_click_shop_1_1"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton2" to="CanvasLayer/Control" method="_on_click_shop_1_2"]

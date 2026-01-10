@@ -3,7 +3,7 @@ extends Control
 
 var PRICE_RATIO: float = 0.2
 
-var score: int = 1000000
+var score: int = 0
 var score_increment: int = 1
 var score_per_second: int = 0
 
