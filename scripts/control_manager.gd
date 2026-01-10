@@ -53,8 +53,11 @@ var shop_2_prices = [
 	0
 ]
 
-func _purchase_upgrade(upgradeID: int):
-	pass
+func purchase_upgrade(upgradeID: int, shopID: int):
+	if shopID == 0: # Shop 1
+		print(shop_1_prices[upgradeID])
+	elif shopID == 1: # Shop 2
+		print(shop_2_prices[upgradeID])
 
 func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
@@ -90,3 +93,18 @@ func update_planet_sprite() -> void:
 	$CanvasContainer/Middle/PlanetButton/Control.visible = !unlocked_sprites[selected_sprite]
 	$CanvasContainer/Middle/PlanetButton/Control/BuySpriteButton.text = "Cost: " + str(sprite_prices[selected_sprite])
 	print(unlocked_sprites[selected_sprite])
+
+# Shop buttons
+func _on_click_shop_1_1() -> void:
+	purchase_upgrade(0, 0)
+func _on_click_shop_2_1() -> void:
+	purchase_upgrade(1, 0)
+func _on_click_shop_3_1() -> void:
+	purchase_upgrade(2, 0)
+func _on_click_shop_1_2() -> void:
+	purchase_upgrade(0, 1)
+func _on_click_shop_2_2() -> void:
+	purchase_upgrade(1, 1)
+func _on_click_shop_3_2() -> void:
+	purchase_upgrade(2, 1)
+# -----------
