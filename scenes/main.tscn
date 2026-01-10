@@ -155,38 +155,21 @@ text = "LOCKED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="Button" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetButton/Control"]
+[node name="BuySpriteButton" type="Button" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetButton/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 1397.0
-offset_right = 1220.0
-offset_bottom = 1589.0
+offset_left = 328.0
+offset_top = 1431.0
+offset_right = 912.0
+offset_bottom = 1555.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/CanvasContainer/Middle/PlanetButton/Control/TextureRect2"]
-modulate = Color(0.9372549, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -249.0
-offset_top = -87.5
-offset_right = 249.0
-offset_bottom = 87.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_jyhfs")
-text = "LOCKED"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme = ExtResource("5_tbgi4")
+text = "Cost: 0"
 
 [node name="PlanetChangeButtons" type="HBoxContainer" parent="CanvasLayer/Control/CanvasContainer/Middle"]
 layout_mode = 2
