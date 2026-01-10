@@ -248,7 +248,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_stretch_ratio = 0.5
 
+[connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton" to="CanvasLayer/Control" method="_on_click_shop_1_1"]
+[connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton2" to="CanvasLayer/Control" method="_on_click_shop_2_1"]
+[connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton3" to="CanvasLayer/Control" method="_on_click_shop_3_1"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Middle/PlanetButton" to="CanvasLayer/Control" method="_on_click_planet"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Middle/PlanetButton/Control/BuySpriteButton" to="CanvasLayer/Control" method="_purchase_planet_sprite"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Middle/PlanetChangeButtons/Button" to="CanvasLayer/Control" method="_cycle_planet_sprite_backward"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Middle/PlanetChangeButtons/Button2" to="CanvasLayer/Control" method="_cycle_planet_sprite_forward"]
+[connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Right/ShopButton" to="CanvasLayer/Control" method="_on_click_shop_1_2"]
+[connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Right/ShopButton2" to="CanvasLayer/Control" method="_on_click_shop_2_2"]
+[connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Right/ShopButton3" to="CanvasLayer/Control" method="_on_click_shop_3_2"]
