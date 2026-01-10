@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8ae071qdtqmx"]
+
+[ext_resource type="Texture2D" uid="uid://c8l05r1uqvjag" path="res://planet-sprites/planet00.png" id="1_o5qli"]
+[ext_resource type="Theme" uid="uid://2wq2d3flugqf" path="res://resources/subheading_theme.tres" id="1_sugp2"]
+[ext_resource type="Theme" uid="uid://c8iwwysl5q678" path="res://resources/heading_theme.tres" id="2_jyhfs"]
+
+[sub_resource type="Gradient" id="Gradient_f2qo4"]
+offsets = PackedFloat32Array(0, 0.61333334, 0.81333333, 0.98)
+colors = PackedColorArray(7.821247e-08, 0, 0.12764716, 1, 0.21161693, 0.1506845, 0.2796765, 1, 0.39796197, 0.2846938, 0.44993472, 1, 1, 0.7176471, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tc0sq"]
+gradient = SubResource("Gradient_f2qo4")
+fill_to = Vector2(0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_tc0sq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ShopTitle" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left"]
+layout_mode = 2
+theme = ExtResource("1_sugp2")
+text = "Shop 1"
+
+[node name="Middle" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/Middle"]
+layout_mode = 2
+theme = ExtResource("2_jyhfs")
+text = "Score: 0"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Middle"]
+layout_mode = 2
+texture_normal = ExtResource("1_o5qli")
+
+[node name="Right" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ShopTitle" type="Label" parent="CanvasLayer/Control/HBoxContainer/Right"]
+layout_mode = 2
+theme = ExtResource("1_sugp2")
+text = "Shop 1"
