@@ -109,7 +109,7 @@ func purchase_upgrade(shopID: int, upgradeID: int):
 			if score >= shop_1_prices[upgradeID]:
 				score -= shop_1_prices[upgradeID]
 				shop_1_levels[upgradeID] += 1
-				shop_1_prices[upgradeID] = floor(shop_1_prices[upgradeID] * (1+PRICE_RATIO))
+				shop_1_prices[upgradeID] = int(floor(shop_1_prices[upgradeID] * (1+PRICE_RATIO)))
 				score_per_second += shop_1_upgrades[upgradeID]
 				update_score()
 				update_shops()
@@ -117,7 +117,7 @@ func purchase_upgrade(shopID: int, upgradeID: int):
 			if score >= shop_2_prices[upgradeID]:
 				score -= shop_2_prices[upgradeID]
 				shop_2_levels[upgradeID] += 1
-				shop_2_prices[upgradeID] = floor(shop_2_prices[upgradeID] * (1+PRICE_RATIO))
+				shop_2_prices[upgradeID] = int(floor(shop_2_prices[upgradeID] * (1+PRICE_RATIO)))
 				score_increment += shop_2_upgrades[upgradeID]
 				update_score()
 				update_shops()
