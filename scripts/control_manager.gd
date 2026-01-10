@@ -68,8 +68,7 @@ func increment_clamped(base: int, value_min: int, value_max: int, increment: int
 	return base
 
 func update_planet_sprite() -> void:
-	if unlocked_sprites[selected_sprite]:
-		$CanvasContainer/Middle/PlanetButton.texture_normal = planet_sprites[selected_sprite]
-	else:
+	$CanvasContainer/Middle/PlanetButton.texture_normal = planet_sprites[selected_sprite]
+	if !unlocked_sprites[selected_sprite]:
 		pass
 	print(unlocked_sprites[selected_sprite])
