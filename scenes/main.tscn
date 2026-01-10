@@ -248,6 +248,9 @@ layout_mode = 2
 layout_mode = 2
 size_flags_stretch_ratio = 0.5
 
+[node name="ScorePerSecond" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton" to="CanvasLayer/Control" method="_on_click_shop_1_1"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton2" to="CanvasLayer/Control" method="_on_click_shop_2_1"]
 [connection signal="pressed" from="CanvasLayer/Control/CanvasContainer/Left/ShopButton3" to="CanvasLayer/Control" method="_on_click_shop_3_1"]
