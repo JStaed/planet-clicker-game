@@ -75,33 +75,34 @@ var shop_2_upgrade = [
 	10
 ]
 
+func _ready() -> void:
+	$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
+	update_planet_sprite()
+	update_prices()
+
 func purchase_upgrade(upgradeID: int, shopID: int):
 	if shopID == 0: # Shop 1
 		if score >= shop_1_prices[upgradeID]:
 			score -= shop_1_prices[upgradeID]
 			shop_1_prices[upgradeID] = int(floor(shop_1_prices[upgradeID] + (shop_1_prices[upgradeID] * PRICE_RATIO)))
 			upgrade_levels[upgradeID] += 1
-			match upgradeID:
-				0:
-					$CanvasContainer/Left/ShopButton.text = "Satellite: lvl " + upgrade_levels[0] + " | Cost: " + shop_1_prices[upgradeID]
-				1:
-					$CanvasContainer/Left/ShopButton2.text = "Rover: lvl " + upgrade_levels[1] + " | Cost: " + shop_1_prices[upgradeID]
-				2:
-					$CanvasContainer/Left/ShopButton3.text = "Rocket: lvl " + upgrade_levels[2] + " | Cost: " + shop_1_prices[upgradeID]
+			update_prices()
 			register_upgrade(upgradeID, shopID)
 	elif shopID == 1: # Shop 2
 		if score >= shop_2_prices[upgradeID]:
 			score -= shop_2_prices[upgradeID]
 			shop_2_prices[upgradeID] = int(floor(shop_2_prices[upgradeID] + (shop_2_prices[upgradeID] * PRICE_RATIO)))
 			upgrade_levels[upgradeID] += 1
-			match upgradeID:
-				0:
-					$CanvasContainer/Right/ShopButton.text = "Research Lab: lvl " + upgrade_levels[3] + " | Cost: " + shop_2_prices[upgradeID]
-				1:
-					$CanvasContainer/Right/ShopButton2.text = "Colony: lvl " + upgrade_levels[4] + " | Cost: " + shop_2_prices[upgradeID]
-				2:
-					$CanvasContainer/Right/ShopButton3.text = "City: lvl " + upgrade_levels[5] + " | Cost: " + shop_2_prices[upgradeID]
+			update_prices()
 			register_upgrade(upgradeID, shopID)
+
+func update_prices() -> void:
+	$CanvasContainer/Left/ShopButton.text = "Satellite: lvl " + str(upgrade_levels[0]) + " | Cost: " + str(shop_1_prices[0])
+	$CanvasContainer/Left/ShopButton2.text = "Rover: lvl " + str(upgrade_levels[1]) + " | Cost: " + str(shop_1_prices[1])
+	$CanvasContainer/Left/ShopButton3.text = "Rocket: lvl " + str(upgrade_levels[2]) + " | Cost: " + str(shop_1_prices[2])
+	$CanvasContainer/Right/ShopButton.text = "Research Lab: lvl " + str(upgrade_levels[3]) + " | Cost: " + str(shop_2_prices[0])
+	$CanvasContainer/Right/ShopButton2.text = "Colony: lvl " + str(upgrade_levels[4]) + " | Cost: " + str(shop_2_prices[1])
+	$CanvasContainer/Right/ShopButton3.text = "City: lvl " + str(upgrade_levels[5]) + " | Cost: " + str(shop_2_prices[2])
 
 func register_upgrade(upgradeID: int, shopID: int):
 	if shopID == 0:
@@ -158,3 +159,7 @@ func _on_click_shop_2_2() -> void:
 func _on_click_shop_3_2() -> void:
 	purchase_upgrade(2, 1)
 # -----------
+
+
+func _on_score_per_second_timeout() -> void:
+	score += score_per_second * (selected_sprite+1)
