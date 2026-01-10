@@ -1,6 +1,5 @@
 extends Control
 
-const PRICE_MULTIPLER = 2
 
 var score: int = 0
 var score_increment: int = 1
@@ -43,40 +42,22 @@ var sprite_prices = [
 	preload("res://planet-sprites/planet09.png")
 ]
 
-var upgrade_levels = [
+var shop_1_prices = [
 	0,
 	0,
-	0,
+	0
+]
+var shop_2_prices = [
 	0,
 	0,
 	0
 ]
 
-var shop_1_prices = [
-	11,
-	12,
-	13
-]
-var shop_2_prices = [
-	21,
-	22,
-	23
-]
-
 func purchase_upgrade(upgradeID: int, shopID: int):
 	if shopID == 0: # Shop 1
-		if score >= shop_1_prices[upgradeID]:
-			score -= shop_1_prices[upgradeID]
-			upgrade_levels[upgradeID] += 1
-			register_upgrade(upgradeID, shopID)
+		print(shop_1_prices[upgradeID])
 	elif shopID == 1: # Shop 2
-		if score >= shop_2_prices[upgradeID]:
-			score -= shop_2_prices[upgradeID]
-			upgrade_levels[upgradeID] += 1
-			register_upgrade(upgradeID, shopID)
-
-func register_upgrade(upgradeID: int, shopID: int):
-	pass
+		print(shop_2_prices[upgradeID])
 
 func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
