@@ -3,7 +3,7 @@ extends Control
 
 var PRICE_RATIO: float = 0.2
 
-var score: int = 0
+var score: int = 1000000
 var score_increment: int = 1
 var score_per_second: int = 0
 
@@ -78,6 +78,11 @@ var sprite_prices = [
 	preload("res://planet-sprites/planet09.png")
 ]
 
+func _ready() -> void:
+	update_shops()
+	update_score()
+	update_planet_sprite()
+
 func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
 		score += score_increment * (1 + selected_sprite)
@@ -119,14 +124,15 @@ func purchase_upgrade(shopID: int, upgradeID: int):
 
 func update_score():
 	$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
+	$CanvasContainer/Middle/ScoreLabel2.text = "Score per second: " + str(score_per_second)
 
 func update_shops():
-	$CanvasContainer/Left/ShopButton.text = "Satellite: lvl " + str(shop_1_levels[0]) + " | Cost " + shop_1_prices[0]
-	$CanvasContainer/Left/ShopButton.text = "Rover: lvl " + str(shop_1_levels[1]) + " | Cost " + shop_1_prices[1]
-	$CanvasContainer/Left/ShopButton.text = "Rocket: lvl " + str(shop_1_levels[2]) + " | Cost " + shop_1_prices[2]
-	$CanvasContainer/Left/ShopButton.text = "Colony: lvl " + str(shop_2_levels[0]) + " | Cost " + shop_2_prices[0]
-	$CanvasContainer/Left/ShopButton.text = "Research Lab: lvl " + str(shop_2_levels[1]) + " | Cost " + shop_2_prices[1]
-	$CanvasContainer/Left/ShopButton.text = "City: lvl " + str(shop_2_levels[2]) + " | Cost " + shop_2_prices[2]
+	$CanvasContainer/Left/ShopButton.text = "Satellite: lvl " + str(shop_1_levels[0]) + " | Cost " + str(shop_1_prices[0])
+	$CanvasContainer/Left/ShopButton2.text = "Rover: lvl " + str(shop_1_levels[1]) + " | Cost " + str(shop_1_prices[1])
+	$CanvasContainer/Left/ShopButton3.text = "Rocket: lvl " + str(shop_1_levels[2]) + " | Cost " + str(shop_1_prices[2])
+	$CanvasContainer/Right/ShopButton.text = "Colony: lvl " + str(shop_2_levels[0]) + " | Cost " + str(shop_2_prices[0])
+	$CanvasContainer/Right/ShopButton2.text = "Research Lab: lvl " + str(shop_2_levels[1]) + " | Cost " + str(shop_2_prices[1])
+	$CanvasContainer/Right/ShopButton3.text = "City: lvl " + str(shop_2_levels[2]) + " | Cost " + str(shop_2_prices[2])
 
 func increment_clamped(base: int, value_min: int, value_max: int, increment: int = 1) -> int:
 	base += increment
@@ -154,3 +160,8 @@ func _on_click_shop_2_2() -> void:
 	purchase_upgrade(1, 1)
 func _on_click_shop_2_3() -> void:
 	purchase_upgrade(1, 2)
+
+
+func _on_score_per_second_timeout() -> void:
+	score += score_per_second
+	update_score()
