@@ -20,15 +20,15 @@ var unlocked_sprites = [
 ]
 var sprite_prices = [
 	0,
-	1,
-	2,
-	3,
-	4,
-	5,
-	6,
-	7,
-	8,
-	9
+	1000,
+	50000,
+	250000,
+	1000000,
+	10000000,
+	100000000,
+	500000000,
+	1000000000,
+	9999999999
 ]
 
 @onready var planet_sprites = [
@@ -46,7 +46,7 @@ var sprite_prices = [
 
 func _on_click_planet() -> void: # Increments score by increment value when the planet is clicked
 	if unlocked_sprites[selected_sprite]:
-		score += score_increment * selected_sprite
+		score += score_increment * (1 + selected_sprite)
 		$CanvasContainer/Middle/ScoreLabel.text = "Score: " + str(score)
 	else:
 		pass
@@ -63,6 +63,7 @@ func _purchase_planet_sprite():
 	if score >= sprite_prices[selected_sprite]:
 		score -= sprite_prices[selected_sprite]
 		unlocked_sprites[selected_sprite] = true
+		update_planet_sprite()
 
 func increment_clamped(base: int, value_min: int, value_max: int, increment: int = 1) -> int:
 	base += increment
@@ -75,4 +76,5 @@ func increment_clamped(base: int, value_min: int, value_max: int, increment: int
 func update_planet_sprite() -> void:
 	$CanvasContainer/Middle/PlanetButton.texture_normal = planet_sprites[selected_sprite]
 	$CanvasContainer/Middle/PlanetButton/Control.visible = !unlocked_sprites[selected_sprite]
+	$CanvasContainer/Middle/PlanetButton/Control/BuySpriteButton.text = "Cost: " + str(sprite_prices[selected_sprite])
 	print(unlocked_sprites[selected_sprite])
