@@ -16,3 +16,32 @@ fill_to = Vector2(0, 1)
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = SubResource("GradientTexture2D_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Middle" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
