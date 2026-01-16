@@ -41,6 +41,7 @@ alignment = 1
 
 [node name="Spacer" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.2
 
 [node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
@@ -58,6 +59,7 @@ horizontal_alignment = 1
 
 [node name="Spacer4" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.1
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left"]
 layout_mode = 2
@@ -66,6 +68,7 @@ text = "Satellite"
 
 [node name="Spacer" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.1
 
 [node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left"]
 layout_mode = 2
@@ -74,6 +77,7 @@ text = "Rover"
 
 [node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.1
 
 [node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left"]
 layout_mode = 2
@@ -85,6 +89,7 @@ layout_mode = 2
 
 [node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.2
 
 [node name="Middle" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
@@ -97,6 +102,7 @@ texture_normal = ExtResource("2_0wfyh")
 
 [node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.2
 
 [node name="Right" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
@@ -105,3 +111,4 @@ alignment = 1
 
 [node name="Spacer4" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.2
