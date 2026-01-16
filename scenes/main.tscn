@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8ae071qdtqmx"]
+[gd_scene load_steps=7 format=3 uid="uid://b8ae071qdtqmx"]
 
 [ext_resource type="PackedScene" uid="uid://d33sg7aanijho" path="res://prefabs/spacer.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://c8l05r1uqvjag" path="res://planet-sprites/planet00.png" id="2_0wfyh"]
+[ext_resource type="Theme" uid="uid://doenlf68pau7h" path="res://resources/ButtonTheme.tres" id="2_sugp2"]
 
 [sub_resource type="Gradient" id="Gradient_sgp6g"]
 offsets = PackedFloat32Array(0.3, 0.9, 1)
@@ -12,6 +13,9 @@ gradient = SubResource("Gradient_sgp6g")
 width = 1920
 height = 1080
 fill_to = Vector2(0, 1)
+
+[sub_resource type="Theme" id="Theme_jyhfs"]
+default_font_size = 96
 
 [node name="Node2D" type="Node2D"]
 
@@ -42,6 +46,42 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+
+[node name="Spacer5" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left"]
+layout_mode = 2
+theme = SubResource("Theme_jyhfs")
+text = "Idle Shop"
+horizontal_alignment = 1
+
+[node name="Spacer4" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left"]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Satellite"
+
+[node name="Spacer" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left"]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Rover"
+
+[node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left"]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Rocket"
+
+[node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer/Left" instance=ExtResource("1_o5qli")]
+layout_mode = 2
 
 [node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
 layout_mode = 2
