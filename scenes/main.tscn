@@ -31,6 +31,12 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 alignment = 1
 
+[node name="Spacer" type="Panel" parent="CanvasLayer/Control/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
