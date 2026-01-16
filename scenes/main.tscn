@@ -132,6 +132,12 @@ texture_normal = ExtResource("2_0wfyh")
 [node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer/Middle" instance=ExtResource("1_o5qli")]
 layout_mode = 2
 
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Middle"]
+layout_mode = 2
+
+[node name="Spacer4" parent="CanvasLayer/Control/HBoxContainer/Middle" instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
 [node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
