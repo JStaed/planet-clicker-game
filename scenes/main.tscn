@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8ae071qdtqmx"]
+[gd_scene load_steps=5 format=3 uid="uid://b8ae071qdtqmx"]
 
 [ext_resource type="PackedScene" uid="uid://d33sg7aanijho" path="res://prefabs/spacer.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://c8l05r1uqvjag" path="res://planet-sprites/planet00.png" id="2_0wfyh"]
 
 [sub_resource type="Gradient" id="Gradient_sgp6g"]
 offsets = PackedFloat32Array(0.3, 0.9, 1)
@@ -24,13 +25,14 @@ texture = SubResource("GradientTexture2D_o5qli")
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.5, 0.5)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 3840.0
+offset_bottom = 2160.0
 alignment = 1
 
 [node name="Spacer" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
@@ -48,6 +50,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
+
+[node name="PlanetButton" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Middle"]
+layout_mode = 2
+texture_normal = ExtResource("2_0wfyh")
 
 [node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer" instance=ExtResource("1_o5qli")]
 layout_mode = 2
